@@ -130,7 +130,9 @@ fun MyEvents1(navController: NavController) {
                             textAlign = TextAlign.Center,
                             color = Color(0xA6DFEFFF)))
                 }
-                Button ( onClick = {},
+                Button ( onClick = {
+                                   navController.navigate("MyEvents")
+                },
                     modifier = Modifier
                         .width(165.5.dp)
                         .height(32.dp)

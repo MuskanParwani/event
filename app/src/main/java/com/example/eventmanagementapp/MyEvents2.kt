@@ -318,42 +318,42 @@ fun MyEvents2(navController: NavController){
                     }
 
                 }
-                Row (modifier = Modifier
-                    .fillMaxWidth()
-                    .height(36.dp),
-                    horizontalArrangement = Arrangement.spacedBy(8.dp, Alignment.Start),
-                    verticalAlignment = Alignment.CenterVertically,
-                ){
-                    Image(
-                        painter = painterResource(id = R.drawable.image2),
-                        contentDescription = "image description",
-                        //contentScale = ContentScale.FillBounds
-                    )
-                    Column(
-                        modifier = Modifier
-                            .width(85.dp)
-                            .height(36.dp),
-                        verticalArrangement = Arrangement.spacedBy(0.dp, Alignment.CenterVertically),
-                        horizontalAlignment = Alignment.Start,
-                    ) {
-                        Text(
-                            text = "Lorem ipsum",
-                            style = TextStyle(
-                                fontSize = 14.sp,
-                                lineHeight = 20.sp,
-                                fontWeight = FontWeight(400),
-                                color = Color(0xE5DFEFFF),
-                            ))
-                        Text(
-                            text = "Batch Name",
-                            style = TextStyle(
-                                fontSize = 12.sp,
-                                lineHeight = 16.sp,
-                                fontWeight = FontWeight(400),
-                                color = Color(0xA6DFEFFF)
-                            ))
-                    }
-                }
+//                Row (modifier = Modifier
+//                    .fillMaxWidth()
+//                    .height(36.dp),
+//                    horizontalArrangement = Arrangement.spacedBy(8.dp, Alignment.Start),
+//                    verticalAlignment = Alignment.CenterVertically,
+//                ){
+//                    Image(
+//                        painter = painterResource(id = R.drawable.image2),
+//                        contentDescription = "image description",
+//                        //contentScale = ContentScale.FillBounds
+//                    )
+//                    Column(
+//                        modifier = Modifier
+//                            .width(85.dp)
+//                            .height(36.dp),
+//                        verticalArrangement = Arrangement.spacedBy(0.dp, Alignment.CenterVertically),
+//                        horizontalAlignment = Alignment.Start,
+//                    ) {
+//                        Text(
+//                            text = "Lorem ipsum",
+//                            style = TextStyle(
+//                                fontSize = 14.sp,
+//                                lineHeight = 20.sp,
+//                                fontWeight = FontWeight(400),
+//                                color = Color(0xE5DFEFFF),
+//                            ))
+//                        Text(
+//                            text = "Batch Name",
+//                            style = TextStyle(
+//                                fontSize = 12.sp,
+//                                lineHeight = 16.sp,
+//                                fontWeight = FontWeight(400),
+//                                color = Color(0xA6DFEFFF)
+//                            ))
+//                    }
+//                }
                 Button ( onClick = {navController.navigate(route = "MyEvents3")},
                     modifier = Modifier
                         .width(351.dp)
@@ -372,7 +372,7 @@ fun MyEvents2(navController: NavController){
                     colors = ButtonDefaults.buttonColors(Color(0x26F52F15))
                 ){
                     Text(
-                        text = "Cancel Joining Event",
+                        text = " Joining Event",
                         style = TextStyle(
                             fontSize = 14.sp,
                             lineHeight = 20.sp,

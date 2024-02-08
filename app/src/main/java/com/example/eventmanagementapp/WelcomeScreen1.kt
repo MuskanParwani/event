@@ -41,17 +41,19 @@ import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 
 @Composable
-fun WelcomeScreen1(navController: NavController){
+fun WelcomeScreen1(navController: NavController) {
 
     var email by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
-    Column (
+
+    Column(
         modifier = Modifier
             .fillMaxSize()
             .background(color = Color(0xFF161A1D))
             .padding(bottom = 161.5.dp),
         verticalArrangement = Arrangement.Center,
-        horizontalAlignment = Alignment.CenterHorizontally)
+        horizontalAlignment = Alignment.CenterHorizontally
+    )
     {
         Column(
             modifier = Modifier.fillMaxWidth(),
@@ -71,14 +73,17 @@ fun WelcomeScreen1(navController: NavController){
                         lineHeight = 32.sp,
                         fontWeight = FontWeight(600),
                         color = Color.White
-                    ))
+                    )
+                )
                 Text(
                     text = "Enter your event id and password to manage",
                     style = TextStyle(
                         fontSize = 14.sp,
                         lineHeight = 20.sp,
                         fontWeight = FontWeight(400),
-                        color = Color.White))
+                        color = Color.White
+                    )
+                )
             }
             Column(
                 verticalArrangement = Arrangement.spacedBy(4.dp, Alignment.Top),
@@ -91,15 +96,17 @@ fun WelcomeScreen1(navController: NavController){
                         lineHeight = 16.sp,
                         fontWeight = FontWeight(400),
                         color = Color.White,
-                    ))
+                    )
+                )
                 OutlinedTextField(
                     modifier = Modifier.width(343.dp),
                     // .height(40.dp),
-                    value = email , onValueChange = { email = it
+                    value = email, onValueChange = {
+                        email = it
 
-                    } ,
+                    },
                     textStyle = TextStyle(color = Color.White)
-                    
+
                 )
             }
             Column(
@@ -113,19 +120,26 @@ fun WelcomeScreen1(navController: NavController){
                         lineHeight = 16.sp,
                         fontWeight = FontWeight(400),
                         color = Color.White,
-                    ))
+                    )
+                )
                 OutlinedTextField(
                     modifier = Modifier.width(343.dp),
                     // .height(40.dp),
-                    value = password , onValueChange = { password = it
+                    value = password, onValueChange = {
+                        password = it
 
-                    } ,
+                    },
                     textStyle = TextStyle(color = Color.White),
-                    trailingIcon = { Image(painter = painterResource(id = R.drawable.eye), contentDescription = null )
+                    trailingIcon = {
+                        Image(
+                            painter = painterResource(id = R.drawable.eye),
+                            contentDescription = null
+                        )
                     })
             }
 
-            Button ( onClick = { navController.navigate(route = "EventsScreen")},
+            Button(
+                onClick = { navController.navigate(route = "MyEvents") },
                 modifier = Modifier
                     .width(343.dp)
                     .height(40.dp)
@@ -138,14 +152,17 @@ fun WelcomeScreen1(navController: NavController){
                     .clip(RoundedCornerShape(8)),
                 contentPadding = PaddingValues(12.dp),
                 colors = ButtonDefaults.buttonColors(Color(0xFFAE5707))
-            ){
-                Text(text = "Continue",
+            ) {
+                Text(
+                    text = "Continue",
                     style = TextStyle(
                         fontSize = 12.sp,
                         lineHeight = 16.sp,
                         fontWeight = FontWeight(400),
                         textAlign = TextAlign.Center,
-                        color = Color(0xE5161A1D)))
+                        color = Color(0xE5161A1D)
+                    )
+                )
             }
             Row(
                 horizontalArrangement = Arrangement.spacedBy(12.dp, Alignment.CenterHorizontally),
@@ -158,7 +175,8 @@ fun WelcomeScreen1(navController: NavController){
                         lineHeight = 16.sp,
                         fontWeight = FontWeight(400),
                         color = Color(0xA6DFEFFF),
-                    ))
+                    )
+                )
                 Text(
                     text = "Login",
                     style = TextStyle(
@@ -166,7 +184,8 @@ fun WelcomeScreen1(navController: NavController){
                         lineHeight = 16.sp,
                         fontWeight = FontWeight(400),
                         color = Color(0xFFAE5707),
-                    ))
+                    )
+                )
                 Text(
                     text = "with student email",
                     style = TextStyle(
@@ -174,16 +193,19 @@ fun WelcomeScreen1(navController: NavController){
                         lineHeight = 16.sp,
                         fontWeight = FontWeight(400),
                         color = Color(0xA6DFEFFF),
-                    ))
+                    )
+                )
             }
             Row(
                 horizontalArrangement = Arrangement.spacedBy(12.dp, Alignment.Start),
                 verticalAlignment = Alignment.CenterVertically,
             ) {
-                Divider(modifier = Modifier
-                    .width(151.dp),
-                    color = Color(0x29A1BDD9) ,
-                    thickness = 1.dp)
+                Divider(
+                    modifier = Modifier
+                        .width(151.dp),
+                    color = Color(0x29A1BDD9),
+                    thickness = 1.dp
+                )
                 Text(
                     text = "OR",
                     style = TextStyle(
@@ -191,11 +213,14 @@ fun WelcomeScreen1(navController: NavController){
                         lineHeight = 16.sp,
                         fontWeight = FontWeight(400),
                         color = Color(0xA6DFEFFF),
-                    ))
-                Divider(modifier = Modifier
-                    .width(151.dp),
+                    )
+                )
+                Divider(
+                    modifier = Modifier
+                        .width(151.dp),
                     color = Color(0x29A1BDD9),
-                    thickness = 1.dp)
+                    thickness = 1.dp
+                )
             }
             Row {
                 Text(
@@ -205,7 +230,8 @@ fun WelcomeScreen1(navController: NavController){
                         lineHeight = 16.sp,
                         fontWeight = FontWeight(400),
                         color = Color(0xFFF58419)
-                    ))
+                    )
+                )
                 Text(
                     text = "for an account",
                     style = TextStyle(
@@ -213,7 +239,8 @@ fun WelcomeScreen1(navController: NavController){
                         lineHeight = 16.sp,
                         fontWeight = FontWeight(400),
                         color = Color(0xFFFFFFFFF)
-                    ))
+                    )
+                )
             }
 
 
@@ -224,6 +251,7 @@ fun WelcomeScreen1(navController: NavController){
 @Preview(showBackground = true)
 @Composable
 fun previewLogo() {
-   // WelcomeScreen1(navController = rememberNavController())
+    WelcomeScreen1(navController = rememberNavController())
+    // WelcomeScreen1(navController = rememberNavController())
 
 }

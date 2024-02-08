@@ -3,6 +3,7 @@ package com.example.eventmanagementapp
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
@@ -35,7 +36,7 @@ data class PendingRequest(val fullName: String, val campusTitle: String)
 
 
 @Composable
-fun PendingRequests() {
+fun PendingRequests(navController: NavController) {
     val pendingRequestsList = remember {
         listOf(
             PendingRequest("Full Name 1", "Campus Title"),
@@ -84,13 +85,17 @@ fun PendingRequests() {
         }
 
         items(pendingRequestsList) { pendingRequest ->
-            PendingRequestItem(pendingRequest)
+            PendingRequestItem(pendingRequest, rememberNavController(), onClick = {
+                navController.navigate("pendingrequestdetail")
+
+            })
         }
     }
 }
 
 @Composable
-fun PendingRequestItem(pendingRequest: PendingRequest) {
+fun PendingRequestItem(pendingRequest: PendingRequest,navController: NavController,
+                       onClick:()-> Unit) {
         Row(
             modifier = Modifier
                 .fillMaxWidth()
@@ -106,7 +111,10 @@ fun PendingRequestItem(pendingRequest: PendingRequest) {
             Column(
                 modifier = Modifier
                     .weight(1f)
-                    .height(36.dp),
+                    .height(36.dp)
+                    .clickable {
+                               onClick.invoke()
+                    },
                 verticalArrangement = Arrangement.spacedBy(0.dp, Alignment.CenterVertically),
                 horizontalAlignment = Alignment.Start,
             ) {
@@ -155,7 +163,7 @@ fun PendingRequestItem(pendingRequest: PendingRequest) {
 @Preview(showBackground = true)
 @Composable
 fun previewReq() {
-   PendingRequests()
+   PendingRequests(rememberNavController())
 }
 
 

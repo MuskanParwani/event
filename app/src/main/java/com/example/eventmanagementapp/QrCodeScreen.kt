@@ -41,11 +41,7 @@ import kotlinx.coroutines.launch
 @Composable
 fun QrCodeScreen(navController: NavController){
 
-   var bottomSheetState = rememberModalBottomSheetState();
-   var scope = rememberCoroutineScope()
-   var isBottomSheetOpen by remember {
-      mutableStateOf(true)
-   }
+
    Scaffold(
       modifier = Modifier.fillMaxSize()
    ) { innerPadding ->
@@ -59,64 +55,14 @@ fun QrCodeScreen(navController: NavController){
          horizontalAlignment = Alignment.CenterHorizontally,
          ){
          OutlinedButton(onClick = {
-            scope.launch {bottomSheetState.hide() }
-               .invokeOnCompletion{
-                  isBottomSheetOpen = true
-               }
+
          })
          {
             Text(text = "Open button",
            fontSize = 24.sp,)
          }
 
-         if (isBottomSheetOpen){
-            ModalBottomSheet(
-               onDismissRequest = { isBottomSheetOpen = false},
-               sheetState = bottomSheetState
-            ) {
-               Column(
-                  modifier = Modifier
-                     .fillMaxWidth()
-                     //.width(375.dp)
-                     //.height(247.dp)
-                     .background(color = Color(0xFF161A1D))
-                     .padding(start = 12.dp, top = 12.dp, end = 12.dp, bottom = 12.dp),
-                  verticalArrangement = Arrangement.spacedBy(12.dp, Alignment.CenterVertically),
-                  horizontalAlignment = Alignment.CenterHorizontally,
-                  ) {
-                  Text(
-                     text = "Get your ticket scanned to check-in",
-                     style = TextStyle(
-                        fontSize = 18.sp,
-                        lineHeight = 24.sp,
-                        fontWeight = FontWeight(500),
-                        color = Color(0xE5DFEFFF),
-                        textAlign = TextAlign.Center,
-                     )
-                  )
-                  Image(
-                     modifier = Modifier
-                        .padding(1.dp)
-                        .background(color = Color(0xFFFFFFFF))
-                        .clickable { navController.navigate(route = "MyEvents4") },
-                     painter = painterResource(id = R.drawable.qr_code),
-                     contentDescription = "image description",
-                     contentScale = ContentScale.None
-                  )
-                  Text(
-                     text = "Get your ticket scanned",
-                     style = TextStyle(
-                        fontSize = 18.sp,
-                        lineHeight = 24.sp,
-                        fontWeight = FontWeight(500),
-                        color = Color(0xE5DFEFFF),
-                        textAlign = TextAlign.Center,
-                     )
-                  )
 
-               }
-            }
-         }
 
 
 

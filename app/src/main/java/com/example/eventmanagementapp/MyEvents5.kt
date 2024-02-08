@@ -18,6 +18,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.text.ClickableText
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Icon
@@ -29,6 +30,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
@@ -307,14 +309,11 @@ fun MyEvents5(navController: NavController){
                     ) {
                         Image(painter = painterResource(id = R.drawable.clock), contentDescription = null )
                     }
-                    Text(
-                        text = "13 pending requests",
-                        style = TextStyle(
-                            fontSize = 14.sp,
-                            lineHeight = 20.sp,
-                            fontWeight = FontWeight(400),
-                            color = Color(0xFFB899FF),
-                        ))
+                   ClickableText(text = AnnotatedString("13 pending requests",
+                       ),
+                       onClick = {
+
+                       })
                 }
 
                 Row (modifier = Modifier
